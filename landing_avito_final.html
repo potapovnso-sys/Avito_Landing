@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ-анализ разговоров • Авито-спецпредложение от Letta Signal</title>
+    <meta name="description" content="Разбор ошибок в продажах по аудиозаписям. 3 анализа бесплатно. Телеграм-бот за 30 секунд покажет слабые места.">
+    
+    <!-- Базовые метатеги -->
+    <meta property="og:title" content="ИИ-анализ продаж • Бесплатный разбор от Letta Signal">
+    <meta property="og:description" content="Узнайте, почему теряете 180 000₽ каждый месяц. Анализ за 30 секунд в Telegram.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Супер-анимации */
+        @keyframes neonPulse {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255,0,110,0.8),
+                           0 0 40px rgba(255,0,110,0.6),
+                           0 0 60px rgba(255,0,110,0.4),
+                           inset 0 0 20px rgba(255,0,110,0.2);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(255,0,110,1),
+                           0 0 50px rgba(255,0,110,0.8),
+                           0 0 70px rgba(255,0,110,0.6),
+                           inset 0 0 25px rgba(255,0,110,0.3);
+            }
+        }
+
+        @keyframes fireGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes electricPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(1deg); }
+            50% { transform: scale(1.1) rotate(-1deg); }
+            75% { transform: scale(1.05) rotate(1deg); }
+        }
+
+        @keyframes moneyFall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes shockwave {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        @keyframes livePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,0,0.8); }
+            50% { transform: scale(1.5); box-shadow: 0 0 30px rgba(255,0,0,1); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* ЭКСТРЕННОЕ УВЕДОМЛЕНИЕ */
+        .emergency-bar {
+            background: linear-gradient(90deg, #ff0040, #ff006e, #ff0040);
+            background-size: 200% 100%;
+            animation: fireGradient 2s linear infinite;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(255,0,64,0.5);
+        }
+
+        .emergency-bar::before {
+            content: '🔥';
+            position: absolute;
+            left: 10px;
+            font-size: 20px;
+            animation: electricPulse 0.5s ease infinite;
+        }
+
+        .emergency-bar::after {
+            content: '🔥';
+            position: absolute;
+            right: 10px;
+            font-size: 20px;
+            animation: electricPulse 0.5s ease infinite;
+        }
+
+        .flash-text {
+            display: inline-block;
+            animation: glitch 0.3s ease infinite;
+            color: #ffff00;
+            text-shadow: 0 0 10px rgba(255,255,0,0.8);
+            font-size: 16px;
+        }
+
+        .countdown-urgent {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 3px 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-family: monospace;
+            font-size: 16px;
+            letter-spacing: 2px;
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
+        }
+
+        /* Hero с WOW-эффектом */
+        .hero {
+            padding: 80px 0 40px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2a 50%, #2a0a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Падающие деньги */
+        .money-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .money {
+            position: absolute;
+            font-size: 30px;
+            animation: moneyFall 10s linear infinite;
+            opacity: 0.3;
+        }
+
+        .money:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .money:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .money:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .money:nth-child(4) { left: 40%; animation-delay: 6s; }
+        .money:nth-child(5) { left: 50%; animation-delay: 8s; }
+        .money:nth-child(6) { left: 60%; animation-delay: 1s; }
+        .money:nth-child(7) { left: 70%; animation-delay: 3s; }
+        .money:nth-child(8) { left: 80%; animation-delay: 5s; }
+        .money:nth-child(9) { left: 90%; animation-delay: 7s; }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero .highlight {
+            display: block;
+            font-size: 48px;
+            background: linear-gradient(90deg, #ff0040, #ff6b6b, #ff0040);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fireGradient 2s linear infinite;
+            text-shadow: 0 0 40px rgba(255,0,64,0.5);
+            margin: 10px 0;
+        }
+
+        /* СУПЕР СЧЕТЧИК ПОТЕРЬ */
+        .mega-counter {
+            background: linear-gradient(135deg, #000, #1a0000);
+            border: 3px solid #ff0040;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            position: relative;
+            animation: neonPulse 2s ease infinite;
+            overflow: hidden;
+        }
+
+        .mega-counter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,0,64,0.3), transparent);
+            animation: shine 2s linear infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .counter-title {
+            font-size: 14px;
+            color: #ff6b6b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .counter-value {
+            font-size: 42px;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
+            letter-spacing: -2px;
+        }
+
+        .counter-speed {
+            font-size: 12px;
+            color: #ffff00;
+            text-align: center;
+            margin-top: 5px;
+            animation: blink 0.5s ease infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* МЕГА CTA КНОПКИ */
+        .mega-cta {
+            display: inline-block;
+            background: linear-gradient(45deg, #00ff00, #00ff88, #00ffff, #00ff88, #00ff00);
+            background-size: 300% 300%;
+            animation: fireGradient 3s ease infinite, electricPulse 2s ease infinite;
+            color: #000;
+            padding: 25px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 20px 0;
+            box-shadow: 0 10px 40px rgba(0,255,0,0.5),
+                        0 20px 60px rgba(0,255,0,0.3),
+                        inset 0 0 20px rgba(255,255,255,0.5);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mega-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .mega-cta:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .mega-cta:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 15px 50px rgba(0,255,0,0.7),
+                        0 25px 70px rgba(0,255,0,0.5);
+        }
+
+        .mega-cta:active {
+            transform: scale(0.95);
+        }
+
+        .cta-text {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pulse-live {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #ff0000;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255,0,0,0.8);
+            animation: livePulse 1s ease infinite;
+        }
+
+        /* Срочные бейджи */
+        .urgency-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .urgency-badge {
+            background: linear-gradient(135deg, rgba(255,0,0,0.9), rgba(255,100,0,0.9));
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            animation: shake 2s ease infinite;
+            box-shadow: 0 5px 15px rgba(255,0,0,0.4);
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10% { transform: translateX(-2px) rotate(-1deg); }
+            20% { transform: translateX(2px) rotate(1deg); }
+            30% { transform: translateX(-2px) rotate(-1deg); }
+            40% { transform: translateX(2px) rotate(1deg); }
+            50% { transform: translateX(0); }
+        }
+
+        /* БЛОК ЖИВЫХ РЕЗУЛЬТАТОВ */
+        .live-results {
+            background: linear-gradient(135deg, #0a0a0a, #1a0a2a);
+            padding: 40px 0;
+            border-top: 2px solid #ff0040;
+            border-bottom: 2px solid #ff0040;
+        }
+
+        .live-title {
+            color: #ff0040;
+            font-size: 24px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            animation: pulse 2s ease infinite;
+        }
+
+        .live-feed {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .live-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .live-item:last-child {
+            border-bottom: none;
+        }
+
+        .live-dot {
+            width: 12px;
+            height: 12px;
+            background: #00ff88;
+            border-radius: 50%;
+            margin-right: 15px;
+            animation: livePulse 1s ease infinite;
+            flex-shrink: 0;
+        }
+
+        .live-time {
+            margin-left: auto;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .live-stats {
+            background: rgba(0,255,136,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            color: #00ff88;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* СОЦИАЛЬНОЕ ДОКАЗАТЕЛЬСТВО */
+        .social-proof-mega {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,255,255,0.1));
+            border-radius: 25px;
+        }
+
+        .proof-item {
+            text-align: center;
+        }
+
+        .proof-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0,255,136,0.5);
+            margin-bottom: 10px;
+            animation: countUp 2s ease;
+        }
+
+        .proof-label {
+            color: #fff;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* РЕАЛЬНЫЙ TELEGRAM с WOW-эффектом */
+        .telegram-demo {
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1a1a2e, #0a0a0a);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .telegram-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .demo-explosion {
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            background: linear-gradient(135deg, #ff0040, #ff6b6b);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 14px;
+            transform: rotate(-5deg);
+            animation: electricPulse 1s ease infinite;
+            box-shadow: 0 10px 30px rgba(255,0,64,0.5);
+            z-index: 3;
+        }
+
+        .telegram-mockup {
+            background: #17212b;
+            border-radius: 30px;
+            padding: 25px;
+            box-shadow: 0 30px 100px rgba(0,0,0,0.5),
+                        0 15px 40px rgba(23,33,43,0.8);
+            border: 2px solid #2b5278;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .telegram-mockup::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(45deg, transparent, rgba(0,255,255,0.1), transparent);
+            animation: scanline 4s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        .telegram-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+
+        .telegram-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00ff88, #00ffff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 20px;
+            color: #000;
+            box-shadow: 0 0 30px rgba(0,255,136,0.5);
+            animation: electricPulse 2s ease infinite;
+        }
+
+        .telegram-info {
+            flex: 1;
+        }
+
+        .telegram-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+
+        .telegram-status {
+            font-size: 12px;
+            color: #00ff88;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: livePulse 1s ease infinite;
+        }
+
+        .telegram-message {
+            background: linear-gradient(135deg, #2b5278, #1e3a52);
+            padding: 20px;
+            border-radius: 20px;
+            color: white;
+            font-size: 15px;
+            line-height: 1.6;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(43,82,120,0.5);
+        }
+
+        .telegram-score {
+            display: inline-block;
+            font-size: 36px;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ff0040, #ff6b6b, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fireGradient 2s linear infinite;
+            text-shadow: 0 0 20px rgba(255,0,64,0.5);
+        }
+
+        .error-mark {
+            color: #ff0040;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(255,0,64,0.5);
+        }
+
+        .success-mark {
+            color: #00ff88;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(0,255,136,0.5);
+        }
+
+        /* КАЛЬКУЛЯТОР-БОМБА */
+        .calculator-bomb {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #2a0a0a, #1a0a2a);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-bomb::before {
+            content: '💰';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+        }
+
+        .calc-title {
+            font-size: 32px;
+            font-weight: 900;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .calc-title .fire {
+            color: #ff0040;
+            animation: fireGradient 2s linear infinite;
+        }
+
+        .calc-input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .calc-input {
+            width: 100%;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid #ff0040;
+            border-radius: 15px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .calc-input:focus {
+            outline: none;
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 0 30px rgba(255,0,64,0.5),
+                        inset 0 0 20px rgba(255,0,64,0.1);
+            transform: scale(1.02);
+        }
+
+        .calc-input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .calc-result-bomb {
+            background: linear-gradient(135deg, #ff0040, #ff6b6b);
+            color: white;
+            padding: 30px;
+            border-radius: 25px;
+            margin-top: 30px;
+            text-align: center;
+            display: none;
+            position: relative;
+            overflow: hidden;
+            animation: neonPulse 2s ease infinite;
+        }
+
+        .calc-result-bomb.show {
+            display: block;
+            animation: shockwaveAppear 0.5s ease, neonPulse 2s ease infinite;
+        }
+
+        @keyframes shockwaveAppear {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .loss-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .loss-amount-mega {
+            font-size: 56px;
+            font-weight: 900;
+            margin: 20px 0;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            animation: electricPulse 2s ease infinite;
+        }
+
+        .loss-yearly {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        /* БЛОК ВОЗРАЖЕНИЙ */
+        .objections-killer {
+            background: linear-gradient(135deg, #1a0a2a, #0a0a0a);
+            padding: 60px 0;
+        }
+
+        .objections-title {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .objection-card {
+            background: rgba(255,255,255,0.05);
+            border-left: 4px solid #00ffff;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .objection-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,255,255,0.2);
+        }
+
+        .objection-q {
+            color: #00ffff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .objection-a {
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Трансформация 3D */
+        .transformation-3d {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #0a0a0a, #1a0a2a);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .transform-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .transform-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .transform-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border-radius: 25px;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .transform-card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .transform-before {
+            border: 3px solid #ff0040;
+            animation: shake 3s ease infinite;
+        }
+
+        .transform-after {
+            border: 3px solid #00ff88;
+            animation: electricPulse 2s ease infinite;
+            box-shadow: 0 0 50px rgba(0,255,136,0.3);
+        }
+
+        .transform-label {
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .transform-value {
+            font-size: 48px;
+            font-weight: 900;
+            margin: 15px 0;
+        }
+
+        .transform-before .transform-value {
+            color: #ff0040;
+            text-shadow: 0 0 20px rgba(255,0,64,0.5);
+        }
+
+        .transform-after .transform-value {
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0,255,136,0.5);
+        }
+
+        .transform-arrow {
+            font-size: 40px;
+            color: #00ffff;
+            animation: arrowPulse 1s ease infinite;
+        }
+
+        @keyframes arrowPulse {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+
+        /* Отзывы-взрыв */
+        .reviews-explosion {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #1a0a2a, #0a0a0a);
+            position: relative;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+            border: 2px solid #00ff88;
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            animation: slideInReview 0.8s ease;
+        }
+
+        @keyframes slideInReview {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .review-card::before {
+            content: '⭐⭐⭐⭐⭐';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 16px;
+        }
+
+        .review-text {
+            color: #fff;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .review-result {
+            background: rgba(0,255,136,0.2);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: 700;
+            color: #00ff88;
+            font-size: 18px;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff0040, #ff6b6b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .author-company {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .author-verified {
+            color: #00ff88;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 3px;
+        }
+
+        /* Как работает - ракета */
+        .how-rocket {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #0a0a0a, #1a0a2a);
+            position: relative;
+        }
+
+        .steps-container {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border: 2px solid #00ffff;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+            animation: slideInStep 0.8s ease backwards;
+        }
+
+        .step-card:nth-child(1) { animation-delay: 0.1s; }
+        .step-card:nth-child(2) { animation-delay: 0.2s; }
+        .step-card:nth-child(3) { animation-delay: 0.3s; }
+        .step-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes slideInStep {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .step-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 40px rgba(0,255,255,0.3);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00ffff, #00ff88);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            color: #000;
+            flex-shrink: 0;
+            animation: electricPulse 2s ease infinite;
+        }
+
+        .step-content h3 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .step-time {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #ff0040, #ff6b6b);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* FAQ мега */
+        .faq-mega {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #1a0a2a, #0a0a0a);
+        }
+
+        .faq-card {
+            background: rgba(255,255,255,0.05);
+            border-left: 4px solid #00ffff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,255,255,0.2);
+        }
+
+        .faq-q {
+            color: #00ffff;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .faq-a {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ФИНАЛЬНЫЙ ВЗРЫВ */
+        .final-explosion {
+            padding: 80px 0;
+            background: radial-gradient(ellipse at center, #2a0a2a 0%, #000 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .final-explosion::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,0,64,0.3) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: shockwave 3s ease infinite;
+        }
+
+        .final-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-title .explosion {
+            display: block;
+            font-size: 48px;
+            background: linear-gradient(90deg, #ff0040, #ffff00, #00ff88, #00ffff, #ff0040);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fireGradient 2s linear infinite;
+            margin: 10px 0;
+        }
+
+        .guarantee-mega {
+            background: linear-gradient(135deg, rgba(0,255,0,0.2), rgba(0,255,255,0.2));
+            border: 3px solid #00ff88;
+            border-radius: 30px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            animation: neonPulse 2s ease infinite;
+        }
+
+        .guarantee-mega::before {
+            content: '✓';
+            position: absolute;
+            font-size: 150px;
+            color: rgba(0,255,136,0.1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .guarantee-title {
+            font-size: 24px;
+            color: #00ff88;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .guarantee-list {
+            text-align: left;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .guarantee-item {
+            color: #fff;
+            font-size: 16px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guarantee-item::before {
+            content: '✓';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #00ff88;
+            color: #000;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        /* Бегущая строка */
+        .ticker {
+            background: #ff0040;
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 20s linear infinite;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Липкая кнопка-магнит */
+        .sticky-magnet {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent, rgba(0,0,0,0.9) 30%, #000);
+            padding: 20px;
+            z-index: 999;
+            backdrop-filter: blur(10px);
+        }
+
+        .sticky-counter {
+            background: rgba(255,0,64,0.2);
+            border: 2px solid #ff0040;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            animation: shake 2s ease infinite;
+        }
+
+        .sticky-slots {
+            color: #ffff00;
+            font-size: 18px;
+            text-shadow: 0 0 10px rgba(255,255,0,0.5);
+        }
+
+        /* Счетчик компаний */
+        .companies-counter {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .companies-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0,255,136,0.5);
+            animation: countUp 2s ease;
+        }
+
+        .companies-label {
+            color: #999;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        /* Мобильная адаптация */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            .hero .highlight { font-size: 36px; }
+            .counter-value { font-size: 32px; }
+            .loss-amount-mega { font-size: 42px; }
+            .transform-value { font-size: 36px; }
+            .transform-container { grid-template-columns: 1fr; }
+            .transform-arrow { transform: rotate(90deg); }
+            .final-title { font-size: 28px; }
+            .final-title .explosion { font-size: 36px; }
+            .live-title { font-size: 20px; }
+            .live-item { font-size: 14px; }
+            .objections-title { font-size: 24px; }
+            .objection-q { font-size: 16px; }
+            .proof-number { font-size: 36px; }
+            .social-proof-mega { grid-template-columns: 1fr; }
+        }
+
+        /* Критически важные стили */
+        .text-center { text-align: center; }
+        .mb-20 { margin-bottom: 20px; }
+        .relative { position: relative; }
+        .z-10 { z-index: 10; }
+    </style>
+</head>
+<body>
+    <!-- ЭКСТРЕННОЕ УВЕДОМЛЕНИЕ -->
+    <div class="emergency-bar">
+        <span class="flash-text">⚠️ ВНИМАНИЕ!</span> 
+        Осталось <strong>3 МЕСТА</strong> на бесплатный анализ
+        <span class="countdown-urgent" id="urgentTimer">23:59:59</span>
+    </div>
+
+    <!-- Hero с падающими деньгами -->
+    <section class="hero">
+        <div class="money-rain">
+            <span class="money">💸</span>
+            <span class="money">💰</span>
+            <span class="money">💵</span>
+            <span class="money">💸</span>
+            <span class="money">💰</span>
+            <span class="money">💵</span>
+            <span class="money">💸</span>
+            <span class="money">💰</span>
+            <span class="money">💵</span>
+        </div>
+
+        <div class="container hero-content">
+            <h1>
+                Ваш продавец молчит 4 секунды
+                <span class="highlight">= -180 000₽/мес</span>
+            </h1>
+            
+            <div class="mega-counter">
+                <div class="counter-title">💸 Компании теряют прямо сейчас</div>
+                <div class="counter-value" id="megaCounter">12,847,392₽</div>
+                <div class="counter-speed">+1,247₽/сек</div>
+            </div>
+
+            <div class="urgency-badges">
+                <div class="urgency-badge">🔥 284 компаний уже с нами</div>
+                <div class="urgency-badge">⚡ 30 сек = полный анализ</div>
+                <div class="urgency-badge">🎯 37 типов ошибок находим</div>
+            </div>
+
+            <div class="companies-counter">
+                <div class="companies-number" id="companiesCount">12,847</div>
+                <div class="companies-label">Разговоров уже проанализировано</div>
+            </div>
+
+            <a href="https://t.me/lettasignal_bot?start=avito" class="mega-cta">
+                <span class="cta-text">
+                    ПОЛУЧИТЬ АНАЛИЗ БЕСПЛАТНО
+                    <span class="pulse-live"></span>
+                </span>
+            </a>
+
+            <p style="color: #ffff00; text-align: center; font-weight: 700; animation: blink 1s ease infinite;">
+                ⏱ ОСТАЛОСЬ МЕСТ: 3 из 10 НА СЕГОДНЯ
+            </p>
+        </div>
+    </section>
+
+    <!-- БЛОК ЖИВЫХ РЕЗУЛЬТАТОВ -->
+    <section class="live-results">
+        <div class="container">
+            <div class="live-title">🔴 ЧТО ПРОИСХОДИТ ПРЯМО СЕЙЧАС:</div>
+            <div class="live-feed">
+                <div class="live-item">
+                    <span class="live-dot"></span>
+                    <span>Клиент из Екатеринбурга экономит 47,000₽ сегодня</span>
+                    <span class="live-time">2 мин назад</span>
+                </div>
+                <div class="live-item">
+                    <span class="live-dot"></span>
+                    <span>Найдена ошибка стоимостью 180,000₽ в автосалоне</span>
+                    <span class="live-time">5 мин назад</span>
+                </div>
+                <div class="live-item">
+                    <span class="live-dot"></span>
+                    <span>Менеджер Анна подняла продажи на 23% за неделю</span>
+                    <span class="live-time">12 мин назад</span>
+                </div>
+            </div>
+            <div class="live-stats">
+                ⏰ Последний анализ: <span id="lastAnalysis">3 минуты назад</span><br>
+                📈 Анализов сегодня: <span id="todayCount">47</span><br>
+                💰 Найдено потерь: <span id="todayLosses">2,847,000₽</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- СОЦИАЛЬНОЕ ДОКАЗАТЕЛЬСТВО -->
+    <section style="background: linear-gradient(135deg, #0a0a0a, #1a0a2a); padding: 40px 0;">
+        <div class="container">
+            <div class="social-proof-mega">
+                <div class="proof-item">
+                    <div class="proof-number" id="companiesUsing">284</div>
+                    <div class="proof-label">Компаний уже автоматизировали продажи</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-number" id="conversationsAnalyzed">12,847</div>
+                    <div class="proof-label">Разговоров проанализировано</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-number">+31%</div>
+                    <div class="proof-label">Средний рост конверсии</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Бегущая строка -->
+    <div class="ticker">
+        <span class="ticker-content">
+            🚨 АЛЕКСАНДР П. УВЕЛИЧИЛ ПРОДАЖИ НА +340К/МЕС • МАРИЯ К. +29% КОНВЕРСИИ • ИВАН С. +2.3М ЗА 3 МЕСЯЦА • 
+            🚨 АЛЕКСАНДР П. УВЕЛИЧИЛ ПРОДАЖИ НА +340К/МЕС • МАРИЯ К. +29% КОНВЕРСИИ • ИВАН С. +2.3М ЗА 3 МЕСЯЦА • 
+        </span>
+    </div>
+
+    <!-- Telegram Demo с WOW-эффектом -->
+    <section class="telegram-demo">
+        <div class="container telegram-container">
+            <div class="demo-explosion">🔥 РЕАЛЬНЫЙ КЕЙС</div>
+            
+            <div class="telegram-mockup">
+                <div class="telegram-header">
+                    <div class="telegram-avatar">AI</div>
+                    <div class="telegram-info">
+                        <div class="telegram-name">LETTA SIGNAL • AI Анализ</div>
+                        <div class="telegram-status">
+                            <span class="status-dot"></span>
+                            <span>Анализ завершен за 27 секунд</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="telegram-message">
+                    📊 <strong>Отчет по звонку #4827</strong><br><br>
+                    
+                    👤 Менеджер: Александр<br>
+                    📞 Длительность: 12:34<br>
+                    🎯 Оценка: <span class="telegram-score">52/150</span><br><br>
+                    
+                    <span class="error-mark">❌ КРИТИЧЕСКИЕ ОШИБКИ:</span><br>
+                    • НЕ назвал клиента по имени (0 раз)<br>
+                    • Молчание 4.2 сек после озвучивания цены<br>
+                    • НЕ выяснил реальный бюджет<br>
+                    • Пропустил 3 сигнала к закрытию<br><br>
+                    
+                    <span class="success-mark">✅ ПОТЕНЦИАЛ:</span><br>
+                    • Конверсия вырастет на +38%<br>
+                    • Это +180,000₽/мес к выручке<br>
+                    • ROI внедрения: 827%
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Калькулятор-бомба -->
+    <section class="calculator-bomb">
+        <div class="container">
+            <h2 class="calc-title">
+                Сколько <span class="fire">ДЕНЕГ ГОРИТ</span> прямо сейчас?
+            </h2>
+            
+            <div class="calc-input-group">
+                <input type="number" 
+                       class="calc-input" 
+                       id="revenue" 
+                       placeholder="💰 Месячная выручка (₽)"
+                       oninput="calculateMegaLoss()">
+            </div>
+            
+            <div class="calc-input-group">
+                <input type="number" 
+                       class="calc-input" 
+                       id="calls" 
+                       placeholder="📞 Звонков в месяц"
+                       oninput="calculateMegaLoss()">
+            </div>
+            
+            <div class="calc-input-group">
+                <input type="number" 
+                       class="calc-input" 
+                       id="conversion" 
+                       placeholder="📈 Текущая конверсия (%)"
+                       oninput="calculateMegaLoss()">
+            </div>
+            
+            <div class="calc-result-bomb" id="megaResult">
+                <div class="loss-title">💸 Вы теряете каждый месяц:</div>
+                <div class="loss-amount-mega" id="megaLoss">0₽</div>
+                <div class="loss-yearly">
+                    За год сгорит: <span id="yearlyLoss">0₽</span><br>
+                    Это <span id="carEquivalent">0</span> новых автомобилей!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Трансформация 3D -->
+    <section class="transformation-3d">
+        <div class="container">
+            <h2 class="transform-title">За 30 дней произойдет это:</h2>
+            
+            <div class="transform-container">
+                <div class="transform-card transform-before">
+                    <div class="transform-label">Сейчас</div>
+                    <div class="transform-value">22%</div>
+                    <div style="color: #ff0040;">Конверсия</div>
+                </div>
+                
+                <div class="transform-arrow">→</div>
+                
+                <div class="transform-card transform-after">
+                    <div class="transform-label">Через месяц</div>
+                    <div class="transform-value">38%</div>
+                    <div style="color: #00ff88;">Конверсия</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: #fff; margin-top: 30px; font-size: 18px;">
+                <strong style="color: #ffff00;">+73% к прибыли</strong> просто исправив ошибки!
+            </p>
+        </div>
+    </section>
+
+    <!-- Отзывы-взрыв -->
+    <section class="reviews-explosion">
+        <div class="container">
+            <div class="review-card">
+                <div class="review-text">
+                    "Я был в ШОКЕ! Оказалось, наши менеджеры НИ РАЗУ не называли клиентов по имени. Исправили — конверсия взлетела."
+                </div>
+                <div class="review-result">
+                    +340,000₽/мес за 2 недели
+                </div>
+                <div class="review-author">
+                    <div class="author-avatar">АК</div>
+                    <div class="author-info">
+                        <div class="author-name">Александр Королев</div>
+                        <div class="author-company">Автосалон "Премиум", Москва</div>
+                        <div class="author-verified">✓ Подтвержденный отзыв</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-text">
+                    "67% преподавателей делали паузу больше 3 секунд после цены. Убрали паузы — продажи выросли МГНОВЕННО!"
+                </div>
+                <div class="review-result">
+                    Конверсия: 15% → 42%
+                </div>
+                <div class="review-author">
+                    <div class="author-avatar">МС</div>
+                    <div class="author-info">
+                        <div class="author-name">Мария Соколова</div>
+                        <div class="author-company">Онлайн-школа "Аккорд"</div>
+                        <div class="author-verified">✓ Подтвержденный отзыв</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-text">
+                    "Думали проблема в лидах. Оказалось — в технике закрытия. Изменили 3 фразы, результат КОСМОС!"
+                </div>
+                <div class="review-result">
+                    +2.3М за квартал
+                </div>
+                <div class="review-author">
+                    <div class="author-avatar">ИП</div>
+                    <div class="author-info">
+                        <div class="author-name">Иван Петров</div>
+                        <div class="author-company">Агентство недвижимости</div>
+                        <div class="author-verified">✓ Подтвержденный отзыв</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как работает - ракета -->
+    <section class="how-rocket">
+        <div class="container">
+            <h2 style="font-size: 32px; color: #fff; text-align: center; margin-bottom: 40px; text-transform: uppercase;">
+                🚀 4 ШАГА ДО ВЗЛЕТА ПРОДАЖ
+            </h2>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Жмете кнопку</h3>
+                        <p>Переходите в Telegram-бот @lettasignal_bot</p>
+                    </div>
+                    <span class="step-time">5 сек</span>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Кидаете запись</h3>
+                        <p>Любой формат: аудио, видео, даже голосовое</p>
+                    </div>
+                    <span class="step-time">10 сек</span>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>ИИ анализирует</h3>
+                        <p>37 параметров за 30 секунд</p>
+                    </div>
+                    <span class="step-time">30 сек</span>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Получаете бомбу</h3>
+                        <p>Детальный разбор + план действий</p>
+                    </div>
+                    <span class="step-time">PROFIT!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК ВОЗРАЖЕНИЙ -->
+    <section class="objections-killer">
+        <div class="container">
+            <h2 class="objections-title">❓ СОМНЕВАЕТЕСЬ? МЫ ПОНИМАЕМ!</h2>
+            
+            <div class="objection-card">
+                <div class="objection-q">💭 "А если у нас нестандартные продажи?"</div>
+                <div class="objection-a">✅ Анализируем ЛЮБЫЕ переговоры: очные встречи, телефонные звонки, видеозвонки, даже голосовые сообщения WhatsApp</div>
+            </div>
+
+            <div class="objection-card">
+                <div class="objection-q">💭 "Сколько времени займет настройка?"</div>
+                <div class="objection-a">✅ 2 часа на интеграцию с вашими системами, первый результат в тот же день. Работаем удаленно, не отвлекаем команду</div>
+            </div>
+
+            <div class="objection-card">
+                <div class="objection-q">💭 "Что если наши клиенты против записи?"</div>
+                <div class="objection-a">✅ Анализируем только с согласия клиентов. 98% соглашаются когда объясняете "для улучшения сервиса". Есть готовые скрипты уведомления</div>
+            </div>
+
+            <div class="objection-card">
+                <div class="objection-q">💭 "А если не поможет?"</div>
+                <div class="objection-a">✅ Возврат 100% денег + 50,000₽ компенсации за потраченное время. За 2 года таких случаев было 0 из 284 клиентов</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ мега -->
+    <section class="faq-mega">
+        <div class="container">
+            <div class="faq-card">
+                <div class="faq-q">❓ Это правда работает?</div>
+                <div class="faq-a">
+                    Да. 12,847 проанализированных разговоров. Средний рост конверсии +31%. 
+                    Просто попробуйте — первые 3 анализа бесплатно.
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">❓ Сколько стоит после бесплатных?</div>
+                <div class="faq-a">
+                    От 5,000₽/мес за базовый пакет. Окупается с первой улучшенной продажи. 
+                    ROI в среднем 827%.
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">❓ Мои данные в безопасности?</div>
+                <div class="faq-a">
+                    Абсолютно. Шифрование AES-256, автоудаление после анализа. 
+                    Мы НЕ храним ваши записи. Соответствие 152-ФЗ.
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">❓ Что если не поможет?</div>
+                <div class="faq-a">
+                    Вернем 100% денег + выплатим 50,000₽ компенсации за потраченное время. 
+                    Но за 2 года таких случаев было 0.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФИНАЛЬНЫЙ ВЗРЫВ -->
+    <section class="final-explosion">
+        <div class="container">
+            <h2 class="final-title">
+                Хватит терять деньги!
+                <span class="explosion">НАЧНИТЕ ЗАРАБАТЫВАТЬ</span>
+            </h2>
+
+            <div class="guarantee-mega">
+                <div class="guarantee-title">🛡️ ТРОЙНАЯ ГАРАНТИЯ</div>
+                <div class="guarantee-list">
+                    <div class="guarantee-item">Найдем минимум 10 ошибок в первом же разговоре</div>
+                    <div class="guarantee-item">Покажем потенциал роста в точных цифрах</div>
+                    <div class="guarantee-item">Или вернем деньги + 50,000₽ сверху</div>
+                </div>
+            </div>
+
+            <a href="https://t.me/lettasignal_bot?start=avito" class="mega-cta" style="animation: neonPulse 1s ease infinite, electricPulse 2s ease infinite;">
+                <span class="cta-text">
+                    🔥 ЗАБРАТЬ 3 БЕСПЛАТНЫХ АНАЛИЗА
+                </span>
+            </a>
+
+            <p style="color: #ffff00; margin-top: 20px; font-size: 18px; font-weight: 700;">
+                ⚠️ БЕЗ КАРТЫ • БЕЗ ПОДПИСКИ • БЕЗ СМС
+            </p>
+        </div>
+    </section>
+
+    <!-- Липкая кнопка-магнит -->
+    <div class="sticky-magnet">
+        <div class="sticky-counter">
+            ⏰ Осталось <span class="sticky-slots" id="slotsLeft">3</span> места на сегодня!
+        </div>
+        <a href="https://t.me/lettasignal_bot?start=avito" class="mega-cta" style="width: 100%; margin: 0;">
+            <span class="cta-text">
+                ПОЛУЧИТЬ АНАЛИЗ (БЕСПЛАТНО)
+            </span>
+        </a>
+    </div>
+
+    <script>
+        // МЕГА СЧЕТЧИК ПОТЕРЬ
+        let totalLoss = 12847392;
+        setInterval(() => {
+            totalLoss += Math.floor(Math.random() * 2000) + 1247;
+            document.getElementById('megaCounter').textContent = totalLoss.toLocaleString('ru-RU') + '₽';
+        }, 1000);
+
+        // Счетчик компаний
+        let companiesAnalyzed = 12847;
+        setInterval(() => {
+            if (Math.random() < 0.3) {
+                companiesAnalyzed += Math.floor(Math.random() * 3) + 1;
+                document.getElementById('companiesCount').textContent = companiesAnalyzed.toLocaleString('ru-RU');
+                
+                // Обновляем также в социальном доказательстве
+                document.getElementById('conversationsAnalyzed').textContent = companiesAnalyzed.toLocaleString('ru-RU');
+            }
+        }, 5000);
+
+        // Счетчик компаний использующих
+        let companiesUsing = 284;
+        setInterval(() => {
+            if (Math.random() < 0.1) {
+                companiesUsing += 1;
+                document.getElementById('companiesUsing').textContent = companiesUsing;
+            }
+        }, 30000);
+
+        // ДИНАМИЧЕСКИЕ ОБНОВЛЕНИЯ LIVE-БЛОКА
+        function updateLiveStats() {
+            // Обновляем время последнего анализа
+            const lastTimes = ['1 минуту', '2 минуты', '3 минуты', '5 минут', '7 минут'];
+            const randomTime = lastTimes[Math.floor(Math.random() * lastTimes.length)];
+            document.getElementById('lastAnalysis').textContent = randomTime + ' назад';
+            
+            // Обновляем счетчик анализов
+            const currentCount = parseInt(document.getElementById('todayCount').textContent);
+            if (Math.random() < 0.3) {
+                document.getElementById('todayCount').textContent = currentCount + 1;
+            }
+            
+            // Обновляем найденные потери
+            const currentLosses = parseInt(document.getElementById('todayLosses').textContent.replace(/[^\d]/g, ''));
+            const newLosses = currentLosses + Math.floor(Math.random() * 50000) + 10000;
+            document.getElementById('todayLosses').textContent = newLosses.toLocaleString('ru-RU') + '₽';
+        }
+
+        // Обновляем каждые 30 секунд
+        setInterval(updateLiveStats, 30000);
+
+        // СУПЕР КАЛЬКУЛЯТОР 
+        function calculateMegaLoss() {
+            const revenue = parseFloat(document.getElementById('revenue').value) || 0;
+            const calls = parseInt(document.getElementById('calls').value) || 0;
+            const conversion = parseFloat(document.getElementById('conversion').value) || 0;
+            
+            if (revenue && calls) {
+                let lossPercent = 0.25;
+                if (conversion && conversion < 20) {
+                    lossPercent = 0.35;
+                }
+                
+                const monthlyLoss = Math.round(revenue * lossPercent);
+                const yearlyLoss = monthlyLoss * 12;
+                const cars = Math.floor(yearlyLoss / 2000000);
+                
+                // Анимация
+                animateMegaValue('megaLoss', monthlyLoss);
+                animateMegaValue('yearlyLoss', yearlyLoss);
+                document.getElementById('carEquivalent').textContent = cars;
+                
+                document.getElementById('megaResult').classList.add('show');
+                
+                // Добавляем эффект взрыва
+                createExplosion();
+            }
+        }
+
+        function animateMegaValue(id, value) {
+            const element = document.getElementById(id);
+            let current = 0;
+            const increment = value / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= value) {
+                    current = value;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.round(current).toLocaleString('ru-RU') + '₽';
+            }, 20);
+        }
+
+        function createExplosion() {
+            const result = document.getElementById('megaResult');
+            result.style.animation = 'none';
+            setTimeout(() => {
+                result.style.animation = 'shockwaveAppear 0.5s ease, neonPulse 2s ease infinite';
+            }, 10);
+        }
+
+        // ТАЙМЕР СРОЧНОСТИ
+        function updateUrgentTimer() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59);
+            
+            const diff = endOfDay - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            const timerText = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            document.getElementById('urgentTimer').textContent = timerText;
+        }
+        
+        setInterval(updateUrgentTimer, 1000);
+        updateUrgentTimer();
+
+        // Динамическое уменьшение мест
+        let availableSlots = 3;
+        setInterval(() => {
+            if (Math.random() < 0.1 && availableSlots > 1) {
+                availableSlots--;
+                document.getElementById('slotsLeft').textContent = availableSlots;
+                
+                // Добавляем уведомление
+                createNotification();
+            }
+        }, 30000);
+
+        function createNotification() {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: linear-gradient(135deg, #ff0040, #ff6b6b);
+                color: white;
+                padding: 20px;
+                border-radius: 15px;
+                font-weight: 700;
+                z-index: 10000;
+                animation: slideIn 0.5s ease;
+                box-shadow: 0 10px 30px rgba(255,0,64,0.5);
+            `;
+            notification.textContent = `⚠️ Кто-то только что занял место! Осталось: ${availableSlots}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.5s ease';
+                setTimeout(() => notification.remove(), 500);
+            }, 3000);
+        }
+
+        // UTM-отслеживание для Авито
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmSource = urlParams.get('utm_source');
+        const utmCampaign = urlParams.get('utm_campaign');
+
+        // Сохраняем источник трафика
+        if (utmSource) {
+            localStorage.setItem('traffic_source', utmSource);
+            localStorage.setItem('traffic_campaign', utmCampaign);
+        }
+
+        // Отслеживание кликов
+        document.querySelectorAll('a[href*="t.me"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Аналитика
+                console.log('MEGA CONVERSION:', {
+                    source: utmSource || 'direct',
+                    campaign: utmCampaign || 'none',
+                    section: this.closest('section')?.className || 'unknown'
+                });
+                
+                // Создаем взрыв при клике
+                createClickExplosion(event);
+                
+                // Отправляем события в аналитику
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click_telegram_bot', {
+                        'source': utmSource || 'direct',
+                        'campaign': utmCampaign || 'none'
+                    });
+                }
+                
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead', {
+                        source: utmSource || 'direct'
+                    });
+                }
+            });
+        });
+
+        // Эффект взрыва при клике
+        function createClickExplosion(e) {
+            const explosion = document.createElement('div');
+            explosion.style.cssText = `
+                position: fixed;
+                top: ${e.clientY}px;
+                left: ${e.clientX}px;
+                width: 10px;
+                height: 10px;
+                background: radial-gradient(circle, #00ff88, transparent);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 10000;
+                animation: explode 0.5s ease;
+            `;
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes explode {
+                    0% { 
+                        width: 10px; 
+                        height: 10px; 
+                        opacity: 1; 
+                    }
+                    100% { 
+                        width: 300px; 
+                        height: 300px; 
+                        opacity: 0;
+                        transform: translate(-150px, -150px);
+                    }
+                }
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+            document.body.appendChild(explosion);
+            
+            setTimeout(() => explosion.remove(), 500);
+        }
+
+        // Проверка видимости элементов
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Применяем анимацию ко всем блокам
+        document.querySelectorAll('.review-card, .step-card, .objection-card, .live-item, .proof-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Параллакс эффект для денег
+        document.addEventListener('mousemove', (e) => {
+            const money = document.querySelectorAll('.money');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            money.forEach((m, index) => {
+                const speed = (index + 1) * 0.5;
+                m.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+
+        // Автоматическое заполнение калькулятора для демо
+        setTimeout(() => {
+            if (!document.getElementById('revenue').value) {
+                document.getElementById('revenue').value = '1000000';
+                document.getElementById('calls').value = '200';
+                document.getElementById('conversion').value = '15';
+                calculateMegaLoss();
+            }
+        }, 5000);
+
+        // Добавляем пульсацию к критическим элементам
+        setInterval(() => {
+            document.querySelectorAll('.mega-cta').forEach(btn => {
+                btn.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    btn.style.transform = 'scale(1)';
+                }, 200);
+            });
+        }, 3000);
+
+        // Финальный таймер до конца акции
+        const endDate = new Date();
+        endDate.setHours(endDate.getHours() + 24);
+        
+        function updateFinalCountdown() {
+            const now = new Date();
+            const diff = endDate - now;
+            
+            if (diff > 0) {
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                // Обновляем все таймеры на странице
+                document.querySelectorAll('.countdown-urgent').forEach(timer => {
+                    timer.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                });
+            }
+        }
+        
+        setInterval(updateFinalCountdown, 1000);
+        updateFinalCountdown();
+    </script>
+</body>
+</html>
